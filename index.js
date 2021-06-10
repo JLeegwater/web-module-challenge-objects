@@ -214,18 +214,16 @@ Use the carMaker function below to do the following:
   Then we called car1.drive(100)
   It would return 110 because it was created with 10 as the odometer and we added 100 to it with the drive method 
 */
-const car = {
-  miles: 0,
-  drive:function(dist){
-    this.miles+=dist;
-  },
 
-}
 
 function carMaker(odometer) {
-  let newCar = car;
-  newCar.miles = odometer;
-    return newCar;
+  const car = {
+    miles: odometer,
+    drive:function(dist){
+    return this.miles+=dist;
+    }
+  }
+  return car;
 }
 let car1 = carMaker(10);
 car1.drive(100);
